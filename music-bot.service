@@ -1,0 +1,17 @@
+[Unit]
+After = network.target
+Description = music-bot service
+
+[Service]
+Type = simple
+RestartSec = 5
+Restart = on-failure
+TimeoutStartSec = infinity
+
+User = user
+Group = user
+WorkingDirectory = /home/user/music-bot
+ExecStart = /home/user/music-bot/bot.py
+
+[Install]
+WantedBy = multi-user.target
